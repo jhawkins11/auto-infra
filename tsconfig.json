@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",
+    "module": "NodeNext",
     "lib": ["ES2022"],
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
@@ -22,6 +22,6 @@
     "incremental": true,
     "tsBuildInfoFile": ".tsbuildinfo"
   },
-  "include": ["bin/**/*.ts"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "build"]
 }

@@ -1,0 +1,10 @@
+{
+  // Prevent VSCode from reorganizing imports on save (keeps our explicit type/value import separation)
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false,
+    "source.fixAll.eslint": true
+  },
+  // Keep Prettier as the default formatter but allow ESLint to fix issues where configured
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}

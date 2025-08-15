@@ -43,6 +43,7 @@ module.exports = [
     plugins: {
       '@typescript-eslint': tseslint,
       import: importPlugin,
+      'simple-import-sort': require('eslint-plugin-simple-import-sort'),
       unicorn,
       promise,
       security,
@@ -81,7 +82,7 @@ module.exports = [
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/consistent-type-imports': [
         'error',
-        { prefer: 'type-imports' },
+        { prefer: 'no-type-imports' },
       ],
       '@typescript-eslint/no-confusing-void-expression': [
         'error',
@@ -103,18 +104,11 @@ module.exports = [
 
       // Imports
       'import/no-default-export': 'error',
-      'import/order': [
-        'error',
-        {
-          'newlines-between': 'always',
-          groups: [
-            ['builtin', 'external'],
-            ['internal'],
-            ['parent', 'sibling', 'index', 'object', 'type'],
-          ],
-          alphabetize: { order: 'asc', caseInsensitive: true },
-        },
-      ],
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+      'import/order': 'off',
+      'no-duplicate-imports': 'error',
+      'import/no-duplicates': 'error',
 
       // Unicorn tweaks for Node CLI
       'unicorn/prefer-module': 'off',
