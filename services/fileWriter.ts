@@ -49,8 +49,7 @@ export const ensureGitignoreHasTerraformIgnores = async (
     'crash.log',
     'crash.*.log',
     '.terraform.lock.hcl',
-    '*.tfvars',
-    '*.tfvars.json',
+    'secrets.*.tfvars',
   ];
 
   const existingLines = new Set(existing.split('\n').map((l) => l.trimEnd()));

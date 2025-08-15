@@ -7,6 +7,10 @@ export type InitAnswers = {
   ecsTaskSize?: 'small' | 'medium' | 'large';
   desiredCount?: number;
   healthCheckPath?: string;
+  dbEngine?: 'postgresql' | 'mysql';
+  dbInstanceSize?: 'micro' | 'small' | 'medium' | 'large' | 'xlarge';
+  dbUsername?: string;
+  dbPassword?: string;
 };
 
 export type PromptQuestion<T> = {
@@ -17,4 +21,5 @@ export type PromptQuestion<T> = {
   choices?: string[];
   validate?: (input: string) => boolean | string;
   filter?: (input: string) => string;
+  mask?: string | boolean;
 };

@@ -92,4 +92,46 @@ export const initQuestions: PromptQuestion<InitAnswers>[] = [
       /^\/[A-Za-z0-9._~/-]*$/.test(input) ||
       'Enter a valid URL path starting with / (e.g., /healthz).',
   },
+  {
+    type: 'list',
+    name: 'dbEngine',
+    message: 'Database engine:',
+    choices: ['postgresql', 'mysql'],
+    default: 'postgresql',
+  },
+  {
+    type: 'list',
+    name: 'dbInstanceSize',
+    message: 'Database instance size:',
+    choices: ['micro', 'small', 'medium', 'large', 'xlarge'],
+    default: 'small',
+  },
+  {
+    type: 'input',
+    name: 'dbUsername',
+    message: 'Database username:',
+    default: 'admin',
+    validate: (input: string) =>
+      /^[A-Za-z][A-Za-z0-9_-]{2,31}$/.test(input) ||
+      'Use 3-32 chars, start with a letter, letters/numbers/_/- allowed.',
+  },
+  {
+    type: 'password',
+    name: 'dbPassword',
+    message: 'Database password:',
+    mask: true,
+    default: (): string => {
+      const alphabet =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[]<>?';
+      const length = 20;
+      let output = '';
+      for (let index = 0; index < length; index++) {
+        output += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+      }
+      return output;
+    },
+    validate: (input: string) =>
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}$/.test(input) ||
+      'Min 12 chars with upper, lower, number, and symbol.',
+  },
 ];
