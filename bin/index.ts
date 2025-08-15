@@ -2,6 +2,8 @@
 
 import { Command } from 'commander';
 
+import { runInitInteractive } from '../commands/init.js';
+
 const program = new Command();
 
 program
@@ -10,11 +12,10 @@ program
   .version('1.0.0');
 
 program
-  .command('init <name>')
-  .description('initialize a new infrastructure')
-  .action((name) => {
-    // Use allowed console methods per ESLint config for simple CLI feedback
-    console.info(`Initializing infrastructure for ${name}...`);
+  .command('init')
+  .description('initialize a new infrastructure (interactive)')
+  .action(async () => {
+    await runInitInteractive();
   });
 
 program.parse(process.argv);
