@@ -2,7 +2,11 @@ export type InitAnswers = {
   projectName: string;
   awsRegion: string;
   domain?: string;
-  dbSize?: string;
+  containerImageUrl?: string;
+  containerPort?: number;
+  ecsTaskSize?: 'small' | 'medium' | 'large';
+  desiredCount?: number;
+  healthCheckPath?: string;
 };
 
 export type PromptQuestion<T> = {

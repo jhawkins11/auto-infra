@@ -1,6 +1,7 @@
 import inquirer from 'inquirer';
 
 import { initQuestions } from '../prompts/initQuestions.js';
+import { generateEcsConfig } from '../services/ecs.js';
 import { generateVpcConfig } from '../services/vpc.js';
 import { InitAnswers } from '../types/prompts.js';
 
@@ -17,9 +18,9 @@ export const runInitInteractive = async (): Promise<void> => {
   );
 
   const vpcConfigPromise = generateVpcConfig(answers);
+  const ecsConfigPromise = generateEcsConfig(answers);
 
-  await Promise.all([vpcConfigPromise]);
+  await Promise.all([vpcConfigPromise, ecsConfigPromise]);
 
-  // Placeholder: future steps will generate files and call services
-  console.info('Interactive initialization complete (placeholder).');
+  console.info('Interactive initialization complete.');
 };
