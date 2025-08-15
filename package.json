@@ -1,0 +1,41 @@
+{
+  "name": "auto-infra",
+  "version": "1.0.0",
+  "description": "infrastructure auto-generator CLI tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --noEmit --project tsconfig.eslint.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write ."
+  },
+  "bin": {
+    "auto-infra": "./build/bin/index.js"
+  },
+  "author": "Josiah Hawkins",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.5.0",
+    "@typescript-eslint/parser": "^8.5.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-n": "^17.10.2",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-sonarjs": "^3.0.4",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
+  }
+}
