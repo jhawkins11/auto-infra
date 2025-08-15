@@ -69,14 +69,24 @@ module.exports = [
       // Prefer arrow functions
       'prefer-arrow/prefer-arrow-functions': [
         'error',
-        { disallowPrototype: true, singleReturnOnly: false, classPropertiesAllowed: false },
+        {
+          disallowPrototype: true,
+          singleReturnOnly: false,
+          classPropertiesAllowed: false,
+        },
       ],
 
       // Typescript specific
       '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
       '@typescript-eslint/consistent-type-exports': 'error',
-      '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
-      '@typescript-eslint/no-confusing-void-expression': ['error', { ignoreArrowShorthand: true }],
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { prefer: 'type-imports' },
+      ],
+      '@typescript-eslint/no-confusing-void-expression': [
+        'error',
+        { ignoreArrowShorthand: true },
+      ],
       '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
       '@typescript-eslint/no-unnecessary-condition': [
         'error',
