@@ -1,8 +1,8 @@
 import inquirer from 'inquirer';
 
 import { initQuestions } from '../prompts/initQuestions.js';
-
-import type { InitAnswers } from '../types/prompts.js';
+import { generateVpcConfig } from '../services/vpc.js';
+import { InitAnswers } from '../types/prompts.js';
 
 export const runInitInteractive = async (): Promise<void> => {
   console.info('\nWelcome to Auto-Infra!');
@@ -15,6 +15,11 @@ export const runInitInteractive = async (): Promise<void> => {
   console.info(
     `\nInitializing project ${answers.projectName} in ${answers.awsRegion}...`,
   );
+
+  const vpcConfigPromise = generateVpcConfig(answers);
+
+  await Promise.all([vpcConfigPromise]);
+
   // Placeholder: future steps will generate files and call services
   console.info('Interactive initialization complete (placeholder).');
 };

@@ -84,6 +84,18 @@ module.exports = [
         'error',
         { prefer: 'no-type-imports' },
       ],
+      // Prefer the TS-aware unused vars rule and ignore underscore-prefixed params/vars
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
       '@typescript-eslint/no-confusing-void-expression': [
         'error',
         { ignoreArrowShorthand: true },
