@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`generateDatabaseConfig should write db.tfvars and secrets.db.tfvars files with correct content: db-non-sensitive 1`] = `
+"project_name = "db-project"
+aws_region = "us-east-2"
+db_engine = "postgresql"
+db_instance_class = "db.t4g.small""
+`;
+
+exports[`generateDatabaseConfig should write db.tfvars and secrets.db.tfvars files with correct content: db-sensitive 1`] = `
+"db_username = "dbadmin"
+db_password = "supersecret""
+`;

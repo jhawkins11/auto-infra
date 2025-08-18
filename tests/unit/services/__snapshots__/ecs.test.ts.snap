@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`generateEcsConfig should write an ecs.tfvars file with the correct content 1`] = `
+"project_name = "ecs-project"
+aws_region = "us-west-1"
+container_image = "ghcr.io/example/app:1.2.3"
+container_port = 4000
+task_cpu = 1024
+task_memory = 2048
+desired_count = 4
+health_check_path = "/hc""
+`;

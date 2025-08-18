@@ -39,17 +39,14 @@ describe('runInitInteractive', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    (generateVpcConfig as jest.Mock).mockResolvedValue(undefined);
-    (generateEcsConfig as jest.Mock).mockResolvedValue(undefined);
-    (generateDatabaseConfig as jest.Mock).mockResolvedValue(undefined);
+
+    jest.mocked(generateVpcConfig).mockResolvedValue(undefined);
+    jest.mocked(generateEcsConfig).mockResolvedValue(undefined);
+    jest.mocked(generateDatabaseConfig).mockResolvedValue(undefined);
   });
 
   it('should call all config generation services with the correct answers on success', async () => {
-    (inquirer.prompt as unknown as jest.Mock).mockResolvedValue(fakeAnswers);
-
-    (generateVpcConfig as jest.Mock).mockResolvedValue(undefined);
-    (generateEcsConfig as jest.Mock).mockResolvedValue(undefined);
-    (generateDatabaseConfig as jest.Mock).mockResolvedValue(undefined);
+    jest.mocked(inquirer.prompt).mockResolvedValue(fakeAnswers);
 
     await runInitInteractive();
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 const config = {
   // use babel-jest to transform TypeScript
@@ -12,6 +13,7 @@ const config = {
     '^(?:.*?/)?types/(.*)\.js$': '<rootDir>/types/$1.ts',
     '^<rootDir>/(.*)\.js$': '<rootDir>/$1.ts',
     '^\.\/fileWriter\.js$': '<rootDir>/services/fileWriter.ts',
+    '^\.\.\/\.\.\/utils\/(.*)\.js$': '<rootDir>/tests/utils/$1.ts',
   },
 };
 

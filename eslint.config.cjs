@@ -109,6 +109,8 @@ module.exports = [
         'error',
         { allowConstantLoopConditions: true },
       ],
+      // Disallow using the `any` type or casting to `any` — keeps tests and code type-safe
+      '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/prefer-nullish-coalescing': [
         'error',
         { ignorePrimitives: { string: true } },
@@ -149,5 +151,4 @@ module.exports = [
       globals: { ...globals.jest },
     },
   },
-  jestPlugin.configs['recommended'],
 ];
