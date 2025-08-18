@@ -5,7 +5,7 @@
   "description": "infrastructure auto-generator CLI tool",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
     "build": "tsc --project tsconfig.json",
     "typecheck": "tsc --noEmit --project tsconfig.eslint.json",
     "lint": "eslint . --ext .ts,.tsx",
@@ -22,10 +22,16 @@
     "inquirer": "^9.1.4"
   },
   "devDependencies": {
+    "@babel/core": "7.28.3",
+    "@babel/preset-env": "7.28.3",
+    "@babel/preset-typescript": "7.27.1",
     "@types/inquirer": "9.0.9",
+    "@types/jest": "30.0.0",
     "@types/node": "^24.3.0",
     "@typescript-eslint/eslint-plugin": "^8.5.0",
     "@typescript-eslint/parser": "^8.5.0",
+    "babel-jest": "30.0.5",
+    "babel-plugin-transform-import-meta": "2.3.3",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-typescript": "^3.6.3",
@@ -36,10 +42,13 @@
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-promise": "^7.1.0",
     "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-sonarjs": "^3.0.4",
     "eslint-plugin-unicorn": "^55.0.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "jest": "30.0.5",
     "prettier": "^3.3.3",
-    "typescript": "^5.6.2"
+    "ts-jest": "29.4.1",
+    "ts-jest-resolver": "2.0.1",
+    "typescript": "5.9.2"
   }
 }

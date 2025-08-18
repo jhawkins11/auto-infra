@@ -4,6 +4,9 @@
 const js = require('@eslint/js');
 const globals = require('globals');
 
+// Jest
+const jestPlugin = require('eslint-plugin-jest');
+
 // TypeScript
 const tseslint = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
@@ -38,7 +41,7 @@ module.exports = [
         ecmaVersion: 2022,
         sourceType: 'module',
       },
-      globals: { ...globals.node, ...globals.es2022 },
+      globals: { ...globals.node, ...globals.es2022, ...globals.jest },
     },
     plugins: {
       '@typescript-eslint': tseslint,
@@ -50,6 +53,7 @@ module.exports = [
       sonarjs,
       'eslint-comments': eslintComments,
       'prefer-arrow': preferArrow,
+      jest: jestPlugin,
     },
     settings: {
       'import/resolver': {
@@ -139,4 +143,11 @@ module.exports = [
       // SonarJS provides a flat config; we use it below
     },
   },
+  {
+    files: ['__tests__/**/*.ts'],
+    languageOptions: {
+      globals: { ...globals.jest },
+    },
+  },
+  jestPlugin.configs['recommended'],
 ];
