@@ -122,8 +122,6 @@ module.exports = [
 
       // Imports
       'import/no-default-export': 'error',
-      'simple-import-sort/imports': 'error',
-      'simple-import-sort/exports': 'error',
       'import/order': 'off',
       'no-duplicate-imports': 'error',
       'import/no-duplicates': 'error',
